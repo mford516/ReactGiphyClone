@@ -11,7 +11,7 @@ class Dashboard extends Component {
         gifs: []
     };
     getGifs() {
-        axios.get('http://res.cloudinary.com/[CLOUD_NAME]/image/list/cliphy.json')
+        axios.get('http://res.cloudinary.com/mford516/image/list/cliphy.json')
             .then(res => {
                 this.setState({ gifs: res.data.resources })
             });
@@ -26,7 +26,7 @@ class Dashboard extends Component {
                 <Nav />
                 <div className="row">
                     <h3 className="col-md-12"> The Dashboard</h3>
-                    <CloudinaryContext cloudName="[CLOUD_NAME]">
+                    <CloudinaryContext cloudName="mford516">
                         {
                             gifs.map((data, index) => (
                                 <div className="col-md-4 col-sm-6 col-xs-12" key={index}>
@@ -38,9 +38,9 @@ class Dashboard extends Component {
                                         </div>
                                         <div className="panel-footer">
                                         Share on:
-                                            <TwitterShareButton className="label label-info" title={"Cliphy"} url={`http://res.cloudinary.com/[CLOUD_NAME]/image/upload/${data.public_id}.gif`}>
+                                            <TwitterShareButton className="label label-info" title={"Cliphy"} url={`http://res.cloudinary.com/mford516/image/upload/${data.public_id}.gif`}>
                                             Twitter </TwitterShareButton>
-                                            <FacebookShareButton className="label label-default" url={`http://res.cloudinary.com/[CLOUD_NAME]/image/upload/${data.public_id}.gif`}>
+                                            <FacebookShareButton className="label label-default" url={`http://res.cloudinary.com/mford516/image/upload/${data.public_id}.gif`}>
                                             Facebook
                                             </FacebookShareButton>
                                         </div>
